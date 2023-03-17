@@ -9,12 +9,14 @@ html{
     font-size: 25px;
     font-family: 'Product Sans', sans-serif;
     background-color: azure;
+    color:white;
 }
 h1{
     font-size: 60px;
     text-align: center;
     margin: 0;
     padding: 20px 0;
+    color:orange;
 }
 p,li{
     font-size: 18px;
@@ -24,4 +26,7 @@ p,li{
 img{
     display: block;
     margin: 0 auto;
+}
+button{
+    text-align: center;
 }
