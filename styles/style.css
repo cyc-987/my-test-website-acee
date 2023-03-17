@@ -2,16 +2,16 @@ body{
     width: auto;
     margin: 20px 20px;
     padding: 3%;
-    border: 5px black;
+    background-image: url("images/background.jpg");
 }
 html{
     font-size: 25px;
     font-family: 'Product Sans', sans-serif;
     background-color:white;
     color:black;
-    text-align: center;
+    /*text-align: center;*/
 }
-h1{
+#changable-h1{
     font-size: 60px;
     text-align: center;
     margin: 0;
@@ -30,7 +30,7 @@ img{
 button{
     text-align: center;
 }
-ul{
+.withbackground{
     margin: 10px auto;
     background-color: azure;
     width: fit-content;

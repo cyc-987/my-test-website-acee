@@ -1,4 +1,4 @@
-let myHeading = document.querySelector('h1');
+let myHeading = document.querySelector('#changable-h1');
 myHeading.textContent = 'Hello world!';
 //alert('hello!');
 //document.querySelector("html").addEventListener("click", () => { alert('don\'t touch me!!') })
