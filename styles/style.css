@@ -1,7 +1,27 @@
-p,h1{
-    color:rgb(37, 156, 199);
+body{
+    width: auto;
+    margin: 20px 20px;
+    background-color: rgb(79, 136, 167);
+    padding: 3%;
+    border: 5px solid black;
 }
 html{
     font-size: 25px;
-    font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Product Sans', sans-serif;
+    background-color: azure;
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+}
+p,li{
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+img{
+    display: block;
+    margin: 0 auto;
 }
