@@ -101,12 +101,17 @@ button[class="changeusr"] {
     width: auto;
 }
 
-.comments p {
+.comments p,
+.comments p * {
     color: black;
     margin: 5px;
 }
 .comment-usr{
     display: flex;
+    align-items: baseline;
+}
+.time{
+    font-size: 10px;
 }
 
 .controls {

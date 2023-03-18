@@ -22,7 +22,7 @@
     <div style="display:flex;">
       <nav class="nav-bar wrapcontent">
 
-        <button class="nav">Theme</button>
+        <button class="nav" onclick="alert('不要点人家嘛！\n还没开发完qaq')">Theme</button>
 
       </nav>
 
@@ -52,9 +52,9 @@
       <div id="commentinputarea">
         <textarea placeholder="请发表你的高见" id="area" cols="20" rows="10"></textarea>
         <div id="counter">
-          <span class="useCount countfont">0</span>
+          <!--<span class="useCount countfont">0</span>
           <span class="countfont">/</span>
-          <span class="countfont">200</span>
+          <span class="countfont">200</span>-->
           <button id="send">发布</button>
         </div>
       </div>
@@ -68,7 +68,7 @@
       <div class="comment-usr">
         <p class="comment-usr-content">comment usr</p>
         <p class="time" id="commit-time">time</p>
-        <p class="time" id="to-date-time">todate time</p>
+        <p class="time"><span class="time" id="to-date-time">todate time</span>ago</p>
       </div>
       <div class="comment-text">
         <p class="comment-text-content">comment text</p>
