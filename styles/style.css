@@ -17,8 +17,8 @@
 
 html {
     background-image: url(../images/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 body {
@@ -105,6 +105,9 @@ button[class="changeusr"] {
     color: black;
     margin: 5px;
 }
+.comment-usr{
+    display: flex;
+}
 
 .controls {
     display: flex;
@@ -145,7 +148,7 @@ footer p {
 
 #commentinputarea{
     background-color: white;
-    border-radius: 25px;
+    border-radius: 40px;
     padding:1em;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -154,7 +157,11 @@ footer p {
     color:black;
 }
 #counter{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: fit-content;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 20px;
 }

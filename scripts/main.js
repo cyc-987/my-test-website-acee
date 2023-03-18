@@ -20,3 +20,13 @@ if (!localStorage.getItem('name')) {
 myButton.onclick = function () {
     setUserName();
 }
+
+function getmessage(){
+    
+}
+
+let addbutton = document.querySelector('send');
+addbutton.onclick = function(){
+    getmessage();
+    addmessage();
+}

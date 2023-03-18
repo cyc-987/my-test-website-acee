@@ -50,7 +50,7 @@
     <div>
       <h3 class="wrapcontent h3heading">评论</h3>
       <div id="commentinputarea">
-        <textarea placeholder="说点什么吧..." id="area" cols="20" rows="10"></textarea>
+        <textarea placeholder="请发表你的高见" id="area" cols="20" rows="10"></textarea>
         <div id="counter">
           <span class="useCount countfont">0</span>
           <span class="countfont">/</span>
@@ -66,10 +66,16 @@
   <div class="comment-state">
     <div class="comments">
       <div class="comment-usr">
-        <p>comment usr</p>
+        <p class="comment-usr-content">comment usr</p>
+        <p class="time" id="commit-time">time</p>
+        <p class="time" id="to-date-time">todate time</p>
       </div>
       <div class="comment-text">
-        <p>comment text</p>
+        <p class="comment-text-content">comment text</p>
+      </div>
+      <div>
+        <button class="modify" id="xiugai">修改</button>
+        <button class="modify" id="shanchu">删除</button>
       </div>
     </div>
   </div>
