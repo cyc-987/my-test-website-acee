@@ -1,38 +1,17 @@
-body{
-    width: auto;
-    margin: 20px 20px;
-    padding: 3%;
-    background-image: url("images/background.jpg");
-}
-html{
-    font-size: 25px;
+*{
     font-family: 'Product Sans', sans-serif;
-    background-color:white;
-    color:black;
-    /*text-align: center;*/
+    /*设置全局字体*/
 }
-#changable-h1{
-    font-size: 60px;
-    text-align: center;
-    margin: 0;
-    padding: 20px 0;
-    color:black;
-}
-p,li{
-    font-size: 18px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-}
-img{
-    display: block;
-    margin: 0 auto;
-}
-button{
-    text-align: center;
-}
-.withbackground{
-    margin: 10px auto;
-    background-color: azure;
+
+#changable-h2{
+    padding:0.5em;
+    margin: 1em 0;
     width: fit-content;
-    padding: auto;
+    border-left:3px solid #0085f2;
+    background-color: rgba(0,133,242,0.1);
+}
+
+body{
+    border-top:5px solid rgb(72, 179, 241);
+    padding: 3%;
 }

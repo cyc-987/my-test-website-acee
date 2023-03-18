@@ -1,8 +1,8 @@
-let myHeading = document.querySelector('#changable-h1');
+let myHeading = document.querySelector('#changable-h2');
 myHeading.textContent = 'Hello world!';
 //alert('hello!');
 //document.querySelector("html").addEventListener("click", () => { alert('don\'t touch me!!') })
-let myButton = document.querySelector('button');
+let myButton = document.querySelector('button[class="changeusr"]');
 function setUserName() {
     let myName = prompt('please enter your name:');
     if(!myName){
