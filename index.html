@@ -13,29 +13,28 @@
 </head>
 
 <body>
+  <!--导航栏部分-->
   <div class="main-nav-bar">
     <header class="wrapcontent">
       <h1 class="mainheading">My Test BBS</h1>
     </header>
 
-    <nav class="nav-bar">
+    <div style="display:flex;">
+      <nav class="nav-bar wrapcontent">
 
-      <button class="nav">Theme</button>
-      <form>
-        <!--searchbox-->
-      </form>
-    </nav>
+        <button class="nav">Theme</button>
 
-    <h2 id="changable-h2" class="notepad">Test website</h2>
+      </nav>
+
+      <!--展示用户信息-->
+      <div class="usrinfo wrapcontent">
+        <h2 id="changable-h2" class="notepad">hellouser</h2>
+      </div>
+    </div>
   </div>
 
+  <!--正文部分-->
   <main>
-    <!--<div>
-      <audio controls>
-        <source src="audios/closer.mp3" type="audio/mp3">
-      </audio>
-    </div>-->
-    <!--this is a music player-->
     <article>
       <div class="articles">
         <h3 class="article-heading">Welcome!</h3>
@@ -44,15 +43,39 @@
         </p>
       </div>
     </article>
-
-    <aside>
-      <p>this is a side box.</p>
-    </aside>
   </main>
 
-  <button class="changeusr">change user</button>
+  <!--评论输入模块-->
+  <div class="controls wrapcontent">
+    <div>
+      <h3 class="wrapcontent h3heading">评论</h3>
+      <div id="commentinputarea">
+        <textarea placeholder="说点什么吧..." id="area" cols="20" rows="10"></textarea>
+        <div id="counter">
+          <span class="useCount countfont">0</span>
+          <span class="countfont">/</span>
+          <span class="countfont">200</span>
+          <button id="send">发布</button>
+        </div>
+      </div>
+    </div>
 
+  </div>
+
+  <!--评论展示模块-->
+  <div class="comment-state">
+    <div class="comments">
+      <div class="comment-usr">
+        <p>comment usr</p>
+      </div>
+      <div class="comment-text">
+        <p>comment text</p>
+      </div>
+    </div>
+  </div>
+  <!--结尾部分-->
   <footer>
+    <button class="changeusr wrapcontent" style="margin:auto;">change user</button>
     <p>A demo website wriitten by cyc 🚀</p>
     <p>All rights reserved.</p>
   </footer>
