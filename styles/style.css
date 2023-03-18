@@ -1,17 +1,43 @@
 *{
     font-family: 'Product Sans', sans-serif;
     /*设置全局字体*/
+    color:white;
 }
 
 #changable-h2{
+    border-radius: 10px;
     padding:0.5em;
     margin: 1em 0;
     width: fit-content;
     border-left:3px solid #0085f2;
-    background-color: rgba(0,133,242,0.1);
+    background-color: white;color:black;
+}
+
+html{
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body{
-    border-top:5px solid rgb(72, 179, 241);
+    border-top:5px solid white;
     padding: 3%;
+}
+
+button{
+    color:black;
+}
+
+.articles{
+    border-radius: 25px;
+    background-color: white;
+    opacity: 0.7;;
+    width: auto;
+    height: 10em;
+    color:black;
+    padding:1em;
+}
+.article-heading, .article-content{
+    color:black;
+    text-align: center;
 }
