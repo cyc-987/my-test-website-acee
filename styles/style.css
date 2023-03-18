@@ -1,5 +1,6 @@
 *{
     font-family: 'Product Sans', sans-serif;
+    
     /*设置全局字体*/
     color:white;
 }
@@ -20,8 +21,43 @@ html{
 }
 
 body{
+    padding: 1em;
+}
+
+.wrapcontent{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.main-nav-bar{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    width: auto;
+}
+
+.mainheading{
     border-top:5px solid white;
-    padding: 3%;
+    border-bottom:5px solid white;
+    padding: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.nav-bar{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right:1px ;
+    width: --webkit-max-avalible;
+    
+}
+button[class="nav"]{
+    display: block;
+    margin: auto;
+    margin-right: 10px;
 }
 
 button{
@@ -35,7 +71,7 @@ button[class="changeusr"]{
 .articles{
     border-radius: 25px;
     background-color: white;
-    opacity: 0.7;;
+    opacity: 0.8;/*透明度*/
     width: auto;
     height: 10em;
     color:black;
