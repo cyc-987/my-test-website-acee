@@ -109,9 +109,18 @@ function storecomment() {
     }
 
     //正则表达式过滤敏感词在这里
-    //还没写qaq
+    var unprocessed = input;
+    var reg1 = /<|>/g;
+    unprocessed = unprocessed.replace(reg1,'');
+    var reg2 = /[a][/*+-]*[c][/*+-]*[e][/*+-]*[e]/g;
+    unprocessed = unprocessed.replace(reg2,'*');
+    //console.log(unprocessed);
+    //debugger;
+    //还没写完qaq
     //
-    comment.push({ name: usrname, time: time, content: input });//创建对象
+
+    var processed = unprocessed;
+    comment.push({ name: usrname, time: time, content: processed });//创建对象
     var str = JSON.stringify(comment);//转换成字符串
     localStorage.setItem('comment', str);//进存储
 
