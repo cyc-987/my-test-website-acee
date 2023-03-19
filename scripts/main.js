@@ -2,7 +2,7 @@ let myHeading = document.querySelector('#changable-h2');
 myHeading.textContent = 'Hello world!';
 //alert('hello!');
 //document.querySelector("html").addEventListener("click", () => { alert('don\'t touch me!!') })
-let myButton = document.querySelector('.changeusr');
+let myButton = document.querySelector('#changeusr');
 function setUserName() {
     let myName = prompt('please enter your name:');
     if (!myName) {
@@ -22,15 +22,16 @@ myButton.onclick = function () {
     setUserName();
 }
 
-$(function(){
+$(function () {
     refresh();
+    var deletebutton = document.querySelector('#shanchu');
 })//刷新时加载评论内容
 //读取评论数量
-if(!localStorage.getItem('storei')){
+if (!localStorage.getItem('storei')) {
     var storei = 0;
-}else{
+} else {
     var storei = localStorage.getItem('storei');
-    storei = int(storei);//转成整型
+    storei = Number(storei);//转成整型
 }
 
 let sendbutton = document.querySelector('#send');
@@ -42,7 +43,18 @@ sendbutton.onclick = function () {
 }
 var deletebutton = document.querySelector('#shanchu');
 deletebutton.onclick = function () {
-    deletecomment();
+    var comment = this.parentNode;
+    console.log(comment);
+    //删除数组特定对象
+    var arrRemoveJson = function (arr, attr, value) {
+        if (!arr || arr.length == 0) {
+            return ""
+        }
+        let newArr = arr.filter(function (item, index) {
+            return item[attr] != value
+        })
+        return newArr
+    }
     refresh();
 }
 
@@ -55,7 +67,7 @@ function storecomment() {
     var input = document.getElementById("area").value;
     var usrname = localStorage.getItem("name");
     var time = getTime();
-    if(!input){
+    if (!input) {
         alert('不要提交空内容！');
         return;
     }
@@ -65,7 +77,7 @@ function storecomment() {
     localStorage.setItem('comment', str);//进存储
 
     storei = storei + 1;
-    localStorage.setItem('storei',storei);
+    localStorage.setItem('storei', storei);
     document.getElementById("area").value = "";
     refresh();
     //dbg();中期调试函数
@@ -94,8 +106,9 @@ function refresh() {
     }
     for (k = 0; k < storei; k++) {
         listr =
-            "<div class='comments' id="+"'"+k+"'"+ ">" +
+            "<div class='comments' id=" + "'" + k + "'" + ">" +
             "<div class='comment-usr'>" +
+            "<p class='cid'"+ "id="+k+">id:"+k+"</p>"+
             "<p class='comment-usr-content'>" + usrname[k] + "</p>" +
             "<p class='time' id='commit-time'>" + time[k] + "</p>" +
             "<p class='time'><span class='time' id='to-date-time'>todate time</span>ago</p>" +
@@ -105,7 +118,6 @@ function refresh() {
             "</div>" +
             "<div>" +
             "<button class='modify' id='xiugai'>修改</button>" +
-            "<button class='modify' id='shanchu'>删除</button>" +
             "</div>" +
             "</div>"
             + listr;
@@ -115,6 +127,3 @@ function refresh() {
     const deletebutton = document.querySelector('#shanchu');
 }
 
-function deletecomment(){
-    
-}
