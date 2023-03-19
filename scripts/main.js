@@ -226,24 +226,25 @@ function md(str) {
     var replace_content_before = [];
     var replace_content_after = [];
     var temp = [];
-    if (str.match(/^(#{1})(.*)/g)) {
-        replace_content_before = str.match(/^(#{1})(.*)/g);
-        //console.log(replace_content_before);
-        //console.log(replace_content_before.length);
-        //debugger;
-        for (var k = 0; k < replace_content_before.length; k++) {
-            replace_content_after[k] = String(replace_content_before[k].match(/[^# ]/g));
+        if (str.match(/(#{1})(.*)/g)) {
+            replace_content_before = str.match(/(#{1})(.*)/g);
+            console.log(replace_content_before);
+            console.log(replace_content_before.length);
+            debugger;
+            for (var k = 0; k < replace_content_before.length; k++) {
+                replace_content_after[k] = String(replace_content_before[k].match(/[^# ]/g));
+            }
+            for (var k = 0; k < replace_content_after.length; k++) {
+                temp[k] = "<h1>" + replace_content_after[k] + "</h1>"
+            }
+            console.log(temp);
+            debugger;
+            for (var k = 0; k < temp.length; k++) {
+                str = str.replace(/(#{1})(.*)/, temp[k].replace(/,/g, '') + "<p>");
+                //str = replace(str,/^(#{1})(.*)/g,1,temp[k].replace(/,/g,'')+"<p>");
+            }
+            console.log(str);
+            debugger;
         }
-        for (var k = 0; k < replace_content_after.length; k++) {
-            temp[k] = "<h1>" + replace_content_after[k] + "</h1>"
-        }
-        console.log(temp);
-        debugger;
-        for (var k = 0; k < temp.length; k++) {
-            str = str.replace(/^(#{1})(.*)/g, temp[k].replace(/,/g,'')+"<p>");
-        }
-        console.log(str);
-        debugger;
-    }
     return str;
 }
