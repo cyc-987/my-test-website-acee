@@ -35,26 +35,31 @@ if (!localStorage.getItem('storei')) {
 }
 
 let sendbutton = document.querySelector('#send');
-comment = [];
-
+let comment = [];
 sendbutton.onclick = function () {
     storecomment();
     refresh();
 }
-var deletebutton = document.querySelector('#shanchu');
+var deletebutton = document.getElementById('delete');
 deletebutton.onclick = function () {
-    var comment = this.parentNode;
-    console.log(comment);
-    //删除数组特定对象
-    var arrRemoveJson = function (arr, attr, value) {
-        if (!arr || arr.length == 0) {
-            return ""
-        }
-        let newArr = arr.filter(function (item, index) {
-            return item[attr] != value
-        })
-        return newArr
+    var str  = localStorage.getItem("comment");
+    var listr = JSON.parse(str);
+    var num = document.getElementById('deletenum').value;
+    numint = Number(num);
+    var storei = localStorage.getItem("storei");
+    storei = Number(storei);
+
+    if(numint >= storei){
+        alert('要删除的评论不存在!')
+        return;
     }
+    listr.splice(numint,1);
+
+    storei = storei-1;
+
+    str = JSON.stringify(listr);
+    localStorage.setItem("comment",str);
+    localStorage.setItem("storei",storei);
     refresh();
 }
 
@@ -72,6 +77,12 @@ function storecomment() {
         return;
     }
 
+    var commenti = localStorage.getItem("comment");
+    if(!commenti){
+        comment = [];
+    }else{
+        comment = JSON.parse(commenti);
+    }
     comment.push({ name: usrname, time: time, content: input });//创建对象
     var str = JSON.stringify(comment);//转换成字符串
     localStorage.setItem('comment', str);//进存储
@@ -95,6 +106,8 @@ function refresh() {
     var usrname = [];
     var time = [];
     var str = localStorage.getItem("comment");
+    var storei = localStorage.getItem("storei");
+    storei = Number(storei);
     var listr = '';
     comments = JSON.parse(str);
     for (k = 0; k < storei; k++) {
@@ -111,7 +124,7 @@ function refresh() {
             "<p class='cid'"+ "id="+k+">id:"+k+"</p>"+
             "<p class='comment-usr-content'>" + usrname[k] + "</p>" +
             "<p class='time' id='commit-time'>" + time[k] + "</p>" +
-            "<p class='time'><span class='time' id='to-date-time'>todate time</span>ago</p>" +
+            "<!--<p class='time'><span class='time' id='to-date-time'>todate time</span>ago</p>-->" +
             "</div>" +
             "<div class='comment-text'>" +
             "<p class='comment-text-content'>" + input[k] + "</p>" +
