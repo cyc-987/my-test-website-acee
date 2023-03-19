@@ -90,6 +90,7 @@ button[class="changeusr"] {
 .comment-state {
     display: flex;
     margin-top: 30px;
+    flex-wrap: wrap;/*启用元素换行*/
 }
 
 .comments {
@@ -99,6 +100,8 @@ button[class="changeusr"] {
     border-radius: 20px;
     padding: 10px;
     width: auto;
+    max-width: 500px;
+    margin: 20px;
 }
 
 .comments p,
