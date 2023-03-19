@@ -75,7 +75,7 @@ button[class="changeusr"] {
     opacity: 0.8;
     /*透明度*/
     width: auto;
-    height: 15em;
+    height: auto;
     color: black;
     padding: 1em;
 }
