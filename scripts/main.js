@@ -49,13 +49,14 @@ deletebutton.onclick = function () {
     var storei = localStorage.getItem("storei");
     storei = Number(storei);
 
-    if(numint >= storei){
+    if(numint >= storei || numint<0){
         alert('要删除的评论不存在!')
         return;
     }
     listr.splice(numint,1);
 
     storei = storei-1;
+    //console.log(storei);
 
     str = JSON.stringify(listr);
     localStorage.setItem("comment",str);
@@ -87,6 +88,13 @@ function storecomment() {
     var str = JSON.stringify(comment);//转换成字符串
     localStorage.setItem('comment', str);//进存储
 
+    if(!localStorage.getItem('storei')){
+        storei = 0;
+    }else{
+        var temp = localStorage.getItem('storei');
+        storei = Number(temp);
+    }
+    //console.log(storei);
     storei = storei + 1;
     localStorage.setItem('storei', storei);
     document.getElementById("area").value = "";
@@ -137,6 +145,5 @@ function refresh() {
     }
     //console.log(listr);
     document.getElementById('comment').innerHTML = listr;
-    const deletebutton = document.querySelector('#shanchu');
 }
 
