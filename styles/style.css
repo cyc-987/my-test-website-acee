@@ -106,7 +106,6 @@ button[class="changeusr"] {
 
 .comments p,
 .comments p * {
-    color: black;
     margin: 5px;
 }
 .comment-usr{
@@ -190,4 +189,12 @@ footer p {
     border-left: 5px solid rgb(47, 131, 191);
     border-radius: 5px;
     border-top: 0;border-bottom: 0;border-right: 0;
+}
+
+.cid,.time{
+    color:gray;
+}
+.comment-text-content,
+.comment-usr-content{
+    color:black;
 }
