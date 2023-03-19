@@ -195,6 +195,7 @@ footer p {
     color:gray;
 }
 .comment-text-content,
-.comment-usr-content{
+.comment-usr-content,
+.comment-text *{
     color:black;
 }

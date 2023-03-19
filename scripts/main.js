@@ -111,13 +111,16 @@ function storecomment() {
     //正则表达式过滤敏感词在这里
     var unprocessed = input;
     var reg1 = /<|>/g;
-    unprocessed = unprocessed.replace(reg1,'');
+    unprocessed = unprocessed.replace(reg1, '');
     var reg2 = /[a][/*+-]*[c][/*+-]*[e][/*+-]*[e]/g;
-    unprocessed = unprocessed.replace(reg2,'*');
+    unprocessed = unprocessed.replace(reg2, '*');
     //console.log(unprocessed);
     //debugger;
     //还没写完qaq
     //
+    //正则表达式实现部分md
+    unprocessed = String(unprocessed);
+    unprocessed = md(unprocessed);
 
     var processed = unprocessed;
     comment.push({ name: usrname, time: time, content: processed });//创建对象
@@ -217,4 +220,30 @@ modifybutton.onclick = function () {
     localStorage.setItem("storei", storei);
     document.getElementById('modifynum').value = '';
     refresh();
+}
+
+function md(str) {
+    var replace_content_before = [];
+    var replace_content_after = [];
+    var temp = [];
+    if (str.match(/^(#{1})(.*)/g)) {
+        replace_content_before = str.match(/^(#{1})(.*)/g);
+        //console.log(replace_content_before);
+        //console.log(replace_content_before.length);
+        //debugger;
+        for (var k = 0; k < replace_content_before.length; k++) {
+            replace_content_after[k] = String(replace_content_before[k].match(/[^# ]/g));
+        }
+        for (var k = 0; k < replace_content_after.length; k++) {
+            temp[k] = "<h1>" + replace_content_after[k] + "</h1>"
+        }
+        console.log(temp);
+        debugger;
+        for (var k = 0; k < temp.length; k++) {
+            str = str.replace(/^(#{1})(.*)/g, temp[k].replace(/,/g,'')+"<p>");
+        }
+        console.log(str);
+        debugger;
+    }
+    return str;
 }
