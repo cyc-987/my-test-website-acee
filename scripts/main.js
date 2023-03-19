@@ -45,12 +45,17 @@ deletebutton.onclick = function () {
     var str  = localStorage.getItem("comment");
     var listr = JSON.parse(str);
     var num = document.getElementById('deletenum').value;
+    if(num == ''){
+        alert('输入为空！');
+        return;
+    }
     numint = Number(num);
     var storei = localStorage.getItem("storei");
     storei = Number(storei);
 
     if(numint >= storei || numint<0){
         alert('要删除的评论不存在!')
+        document.getElementById('deletenum').value = '';
         return;
     }
     listr.splice(numint,1);
@@ -61,6 +66,7 @@ deletebutton.onclick = function () {
     str = JSON.stringify(listr);
     localStorage.setItem("comment",str);
     localStorage.setItem("storei",storei);
+    document.getElementById('deletenum').value = '';
     refresh();
 }
 
@@ -137,9 +143,6 @@ function refresh() {
             "<div class='comment-text'>" +
             "<p class='comment-text-content'>" + input[k] + "</p>" +
             "</div>" +
-            "<div>" +
-            "<button class='modify' id='xiugai'>修改</button>" +
-            "</div>" +
             "</div>"
             + listr;
     }
@@ -147,3 +150,31 @@ function refresh() {
     document.getElementById('comment').innerHTML = listr;
 }
 
+var modifybutton = document.getElementById('modify');
+modifybutton.onclick = function () {
+    var str  = localStorage.getItem("comment");
+    var listr = JSON.parse(str);
+    var num = document.getElementById('modifynum').value;
+    if(num == ''){
+        alert('输入为空！');
+        return;
+    }
+    numint = Number(num);
+    var storei = localStorage.getItem("storei");
+    storei = Number(storei);
+
+    if(numint >= storei || numint<0){
+        alert('要修改的评论不存在!')
+        document.getElementById('modifynum').value = '';
+        return;
+    }
+
+    document.getElementById('area').value = listr[numint].content;
+    listr.splice(numint,1);
+    storei = storei-1;
+    str = JSON.stringify(listr);
+    localStorage.setItem("comment",str);
+    localStorage.setItem("storei",storei);
+    document.getElementById('modifynum').value = '';
+    refresh();
+}

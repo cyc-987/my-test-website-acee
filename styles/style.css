@@ -183,3 +183,11 @@ footer p {
 #deletenum{
     color: black;
 }
+
+.littlebox{
+    color: black;
+    background-color: white;
+    border-left: 5px solid rgb(47, 131, 191);
+    border-radius: 5px;
+    border-top: 0;border-bottom: 0;border-right: 0;
+}
